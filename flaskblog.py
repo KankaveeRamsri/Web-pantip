@@ -16,7 +16,13 @@ posts = [
         'title': 'Blog Post 2',
         'content': 'Second post content',
         'date_posted': 'April 21, 2018'
-    }   
+    },
+    {
+        'author': 'Puntawut Samakkee',
+        'title': 'Blog Post 3',
+        'content': 'Third post content',
+        'date_posted': 'April 22, 2018'
+    }    
 ]
 
 @app.route("/")
@@ -28,7 +34,7 @@ def home():
 def about():
     return render_template('about.html', title = 'About')
 
-@app.route("/register")
+@app.route("/register", methods=['GET', 'POST'])
 def register():
     form = RegistractionForm()
     return render_template('register.html', title = 'Register', form = form)
