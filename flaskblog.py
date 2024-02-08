@@ -1,3 +1,4 @@
+from datetime import datetime
 from flask import Flask, render_template, flash, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from forms import RegistractionForm, LoginForm
@@ -18,7 +19,14 @@ class User(db.Model):
         return f"User('{self.username}', '{self.email}', '{self.image_file}')"
 
 class Post(db.Model):
-    pass
+    id = db.Column(db.Integer, primary_key=True)
+    title = username = db.Column(db.String(100), nullable=False)
+    data_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow())    
+    content = db.Column(db.Text, nullable=False)
+    
+    def __repr__(self):
+        return f"Post('{self.title}', '{self.date_posted}')"
+    
     
 posts = [
     {
