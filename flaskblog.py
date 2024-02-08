@@ -5,7 +5,7 @@ from forms import RegistractionForm, LoginForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '4058f686bb3cc7a9edc824164d1ed6c6'
-app.config['SQLALCHEMY_DATATBASE_URI'] = 'sqlite:///site.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
 
 class User(db.Model):
@@ -21,16 +21,18 @@ class User(db.Model):
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = username = db.Column(db.String(100), nullable=False)
+    title = db.Column(db.String(100), nullable=False)
     data_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow())    
     content = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     
     
     def __repr__(self):
-        return f"Post('{self.title}', '{self.date_posted}')"
-    
-    
+        return f"Post('{self.title}', '{self.data_posted}')"
+
+with app.app_context():
+    db.create_all()
+
 posts = [
     {
         'author': 'Kankavee Ramri',
