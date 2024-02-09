@@ -92,4 +92,33 @@ main {
 footer {
     margin-top: auto;
 }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #555555;
+    color: white;
+    padding: 10px 20px; /* เพิ่ม padding เพื่อไม่ให้แถบขยับไปมามากเกินไป */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.right-nav {
+    margin-left: auto;
+}
+
+.nav-links a, .right-nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .right-nav a:hover {
+    color: #ffc107; /* เปลี่ยนสีเมื่อ hover */
+}
