@@ -4,7 +4,9 @@
         <div class="media-body ml-4">
             <div class="article-metadata">
                 <span class="mr-2">
-                    <strong>By {{ post.author.username }}</strong><br>
+                    <a href="{{ url_for('user_posts', username=post.author.username) }}" class="article-link">
+                        <strong>By {{ post.author.username }}</strong><br>
+                    </a>
                 </span>
                 <span class="text-muted">
                     Posted on {{ post.date_posted.strftime('%B %d, %Y') }}
