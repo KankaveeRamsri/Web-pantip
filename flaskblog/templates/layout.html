@@ -104,7 +104,8 @@
         <div class="right-nav">
             <nav>
                 {% if current_user.is_authenticated %}
-                <a href="{{ url_for('account') }}">Account</a>
+                    <a href="{{ url_for('new_post') }}">New Post</a>
+                    <a href="{{ url_for('account') }}">Account</a>
                     <a href="{{ url_for('logout') }}">Logout</a>
                 {% else %}
                     <a href="{{ url_for('login') }}">Login</a>
