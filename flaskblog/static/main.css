@@ -122,3 +122,15 @@ footer {
 .nav-links a:hover, .right-nav a:hover {
     color: #ffc107; /* เปลี่ยนสีเมื่อ hover */
 }
+.right-nav {
+    margin-left: auto;
+}
+
+.right-nav nav {
+    display: flex;
+    align-items: center;
+}
+
+.right-nav a {
+    margin-left: 15px;
+}
