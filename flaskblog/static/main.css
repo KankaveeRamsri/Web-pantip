@@ -134,4 +134,33 @@ footer {
 .right-nav a {
     margin-left: 15px;
 }
+/* ลิงก์ */
+.article-link {
+    text-decoration: none;
+    color: #3498db; /* สีลิงก์ที่ไม่ได้ถูกกด */
+    transition: color 0.3s ease; /* เพื่อให้เกิดเอฟเฟกต์ transition เมื่อมีการ hover */
+}
+
+.article-link:hover {
+    color: #2980b9; /* สีลิงก์เมื่อถูก hover */
+}
+
+/* ชื่อบทความ */
+.article-title {
+    font-size: 28px;
+    color: #2c3e50; /* สีของข้อความ */
+    margin-bottom: 10px; /* ระยะห่างข้างล่าง */
+}
+
+/* เนื้อหาบทความ */
+.article-content {
+    color: #555; /* สีของข้อความเนื้อหา */
+    line-height: 1.6; /* ระยะห่างระหว่างบรรทัด */
+}
+
+/* ให้บทความมีพื้นหลังขาว */
+body {
+    background-color: #fff;
+    margin: 0; /* ลบระยะขอบของ body */
+}
 

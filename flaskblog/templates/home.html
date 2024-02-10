@@ -11,7 +11,9 @@
                     Posted on {{ post.date_posted.strftime('%B %d, %Y') }}
                 </span>
             </div>
-            <h2 class="article-title">{{ post.title }}</h2>
+            <a href="{{ url_for('post', post_id=post.id) }}" class="article-link">
+                <h2 class="article-title">{{ post.title }}</h2>
+            </a>
             <p class="article-content">{{ post.content }}</p>
         </div>
     </article>
